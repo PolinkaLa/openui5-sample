@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog id="addUserDialog" title="Add User">
+      <content>
+            <Label text="{i18n>FirstName}" labelFor="firstNameInput"/>
+            <Input id="firstNameInput"   value="{/recipient/FirstName}"/>
+            <Label text="{i18n>LastName}" labelFor="lastNameInput"/>
+            <Input id="lastNameInput"   value="{/recipient/LastName}"/>
+            
+      </content>
+      <beginButton><Button text="{i18n>addUserDialogSaveBtnText}" press=".onSaveDialog"/></beginButton>
+      <endButton><Button text="{i18n>addUserDialogCloseBtnText}" press=".onCloseDialog"/> </endButton>
+   </Dialog>
+</core:FragmentDefinition>

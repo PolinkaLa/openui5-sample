@@ -1,0 +1,68 @@
+<mvc:View
+		controllerName="sap.ui.demo.staff.controller.UsersList"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Table
+		id="usersList"
+		class="sapUiResponsiveMargin"
+		items="{
+			path : 'users>/Users',
+			sorter : {
+				path : 'Position',
+				group : true
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>UsersListTitle}"/>
+				<ToolbarSpacer/>
+				<SearchField width="50%" search=".onSearchUser"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+      <Column>
+        <Text text="{i18n>User}" />
+      </Column>
+       <Column>
+        <Text text="{i18n>Position}" />
+      </Column>
+			<Column>
+        <Text text="{i18n>DateBirth}" />
+      </Column>
+			<Column>
+        <Text text="{i18n>Room}" />
+      </Column>
+			<Column>
+        <Text text="{i18n>CreatedDate}" />
+      </Column>
+			<Column>
+        <Text text="{i18n>Computer}" />
+      </Column>
+			<Column>
+        <Text text="{i18n>Project}" />
+      </Column>
+    </columns>
+<items>
+      <ColumnListItem type="Navigation" press=".onPress"> 
+        <cells>
+          <ObjectIdentifier
+            title="{users>UserID}"
+						text="{users>FirstName} {users>LastName}"/>
+          <Text
+            text="{users>Position}" />
+					<Text
+            text="{users>DateBirth}" />
+					<Text
+            text="{users>Room}" />
+					<Text
+            text="{users>CreatedDate}" />
+					<Text
+            text="{users>Computer}" />	
+					<Text
+            text="{users>Project}" />				
+        </cells>
+      </ColumnListItem>
+    </items>
+	</Table>
+
+</mvc:View>

@@ -1,0 +1,28 @@
+<mvc:View
+	controllerName="sap.ui.demo.staff.controller.Detail"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>detailPageTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+
+		<ObjectHeader
+			icon="sap-icon://customer"
+			title="{users>FirstName} {users>LastName}"
+			intro="{users>Position}" >
+			<attributes>
+				<ObjectAttribute title="{i18n>UserID}" text="{users>UserID}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>Login}" text="{users>Login}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>CreatedDate}" text="{users>CreatedDate}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>DateBirth}" text="{users>DateBirth}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>Project}" text="{users>Project}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>Manager}" text="{users>Manager}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>Room}" text="{users>Room}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>Computer}" text="{users>Computer}"></ObjectAttribute>
+			</attributes>
+		</ObjectHeader>
+	</Page>
+</mvc:View>
+

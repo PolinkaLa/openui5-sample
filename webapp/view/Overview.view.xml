@@ -1,0 +1,18 @@
+<mvc:View
+		controllerName="sap.ui.demo.staff.controller.App"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>homePageTitle}">
+		<headerContent>
+			<Button
+					icon="sap-icon://sys-help-2"
+					press=".onOpenDialog"/>					
+		</headerContent>
+		<content>
+		<Button
+					icon="sap-icon://add-contact"
+					press=".onOpenAddUserDialog"/>
+			<mvc:XMLView viewName="sap.ui.demo.staff.view.UsersList"/>
+		</content>
+	</Page>
+</mvc:View>
