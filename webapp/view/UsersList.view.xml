@@ -5,6 +5,10 @@
 	<Table
 		id="usersList"
 		class="sapUiResponsiveMargin"
+		growing="true"
+		growingThreshold="10"
+		growingScrollToLoad="false"
+		
 		items="{
 			path : 'users>/Users',
 			sorter : {
