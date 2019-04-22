@@ -3,8 +3,7 @@
    xmlns:core="sap.ui.core" >
    <Dialog
       id="helpDialog"
-      title="Help"
-      >
+      title="Help">
       <content>
          <Text text="{i18n>HelpText}"/>
       </content>

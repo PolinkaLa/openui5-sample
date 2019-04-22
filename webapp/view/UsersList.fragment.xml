@@ -1,14 +1,14 @@
-<mvc:View
-		controllerName="sap.ui.demo.staff.controller.UsersList"
+<core:FragmentDefinition
 		xmlns="sap.m"
-		xmlns:mvc="sap.ui.core.mvc">
+		xmlns:core="sap.ui.core"
+		controllerName="sap.ui.demo.staff.controller.UsersList">
 	<Table
 		id="usersList"
 		class="sapUiResponsiveMargin"
 		growing="true"
-		growingThreshold="10"
-		growingScrollToLoad="false"
-		
+		growingThreshold="5"
+		growingScrollToLoad="true"
+		width="auto"
 		items="{
 			path : 'users>/Users',
 			sorter : {
@@ -19,8 +19,18 @@
 		<headerToolbar>
 			<Toolbar>
 				<Title text="{i18n>UsersListTitle}"/>
+				<OverflowToolbar>
 				<ToolbarSpacer/>
-				<SearchField width="50%" search=".onSearchUser"/>
+				<!-- Add the Personalization button  https://openui5.hana.ondemand.com/#/entity/sap.m.Table/sample/sap.m.sample.TablePerso/code/Table.controller.js-->
+				<CheckBox text="Enable Personalization Grouping" select="onTableGrouping" />
+				<!-- Add the Personalization button -->
+				<Button icon="sap-icon://action-settings" press="onPersoButtonPressed" >
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+				<!-- <SearchField width="30%" search=".onSearchUser"/> -->
 			</Toolbar>
 		</headerToolbar>
 		<columns>
@@ -56,8 +66,7 @@
             text="{users>Position}" />
 					<Text
             text="{users>DateBirth}" />
-					<Text
-            text="{users>Room}" />
+					<Text text="{users>Room}"/>
 					<Text
             text="{users>CreatedDate}" />
 					<Text
@@ -68,5 +77,4 @@
       </ColumnListItem>
     </items>
 	</Table>
-
-</mvc:View>
+</core:FragmentDefinition>

@@ -1,17 +1,18 @@
 sap.ui.define([], function () {
 	"use strict";
 	return {
-		statusText: function (sStatus) {
+		room: function (roomNumber) {
 			var resourceBundle = this.getView().getModel("i18n").getResourceBundle();
-			switch (sStatus) {
-				case "A":
-					return resourceBundle.getText("invoiceStatusA");
-				case "B":
-					return resourceBundle.getText("invoiceStatusB");
-				case "C":
-					return resourceBundle.getText("invoiceStatusC");
+			switch (roomNumber) {
+				case "1":
+					console.log("ddfdjkfgkdfgjfdg")
+					return resourceBundle.getText("room_1");
+				case "2":
+					return resourceBundle.getText("room_2");
+				case "3":
+					return resourceBundle.getText("room_3");
 				default:
-					return sStatus;
+					return roomNumber;
 			}
 		}
 	};
