@@ -7,7 +7,6 @@
 		title="{i18n>detailPageTitle}"
 		showNavButton="true"
 		navButtonPress=".onNavBack">
-
 		<ObjectHeader
 			icon="sap-icon://customer"
 			title="{users>FirstName} {users>LastName}"
@@ -23,6 +22,11 @@
 				<ObjectAttribute title="{i18n>Computer}" text="{users>Computer}"></ObjectAttribute>
 			</attributes>
 		</ObjectHeader>
+		<footer>
+				<Toolbar>
+				<content/>
+			</Toolbar>
+		</footer>
 	</Page>
 </mvc:View>
 

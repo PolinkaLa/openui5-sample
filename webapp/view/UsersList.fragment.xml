@@ -1,7 +1,6 @@
 <core:FragmentDefinition
 		xmlns="sap.m"
-		xmlns:core="sap.ui.core"
-		controllerName="sap.ui.demo.staff.controller.UsersList">
+		xmlns:core="sap.ui.core">
 	<Table
 		id="usersList"
 		class="sapUiResponsiveMargin"
@@ -19,7 +18,6 @@
 		<headerToolbar>
 			<Toolbar>
 				<Title text="{i18n>UsersListTitle}"/>
-				<OverflowToolbar>
 				<ToolbarSpacer/>
 				<!-- Add the Personalization button  https://openui5.hana.ondemand.com/#/entity/sap.m.Table/sample/sap.m.sample.TablePerso/code/Table.controller.js-->
 				<CheckBox text="Enable Personalization Grouping" select="onTableGrouping" />
@@ -29,8 +27,7 @@
 						<OverflowToolbarLayoutData priority="NeverOverflow" />
 					</layoutData>
 				</Button>
-			</OverflowToolbar>
-				<!-- <SearchField width="30%" search=".onSearchUser"/> -->
+				<SearchField id="searchString" width="30%" search=".onSearchUser"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>
@@ -57,7 +54,7 @@
       </Column>
     </columns>
 <items>
-      <ColumnListItem type="Navigation" press=".onPress"> 
+      <ColumnListItem type="Navigation" press="onShowDetail"> 
         <cells>
           <ObjectIdentifier
             title="{users>UserID}"
@@ -66,7 +63,10 @@
             text="{users>Position}" />
 					<Text
             text="{users>DateBirth}" />
-					<Text text="{users>Room}"/>
+					<Text text="{
+						path: 'users>Room',
+						formatter: '.formatter.roomName'
+					}"/>
 					<Text
             text="{users>CreatedDate}" />
 					<Text

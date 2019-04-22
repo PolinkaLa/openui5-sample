@@ -4,14 +4,14 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.staff.controller.App", {
-		onInit: function () {
-			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-		},
-		onOpenDialog : function () {
-			this.getOwnerComponent().openHelloDialog();
-		},
-		onOpenAddUserDialog : function () {
-			this.getOwnerComponent().openAddUserDialog();
-		}
+		// onInit: function () {
+		// 	this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+		// }
+		// onOpenHelpDialog : function () {
+		// 	this.getOwnerComponent().openHelpDialog();
+		// },
+		// onOpenAddUserDialog : function () {
+		// 	this.getOwnerComponent().openAddUserDialog();
+		// }
 	});
 });
