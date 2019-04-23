@@ -9,18 +9,6 @@ sap.ui.define([
 
 	return ManagedObject.extend("sap.ui.demo.staff.controller.AddUserDialog", {
 		
-		onInit : function () {
-			var oData = {
-			   recipient : {
-				  FirstName : '',
-				  LastName : '' 
-			   }
-			};
-			var oModel = new JSONModel(oData);
-			this.getView().setModel(oModel);
-		 },
-
-
 		constructor : function (oView) {
 			this._oView = oView;
 		},
@@ -40,9 +28,8 @@ sap.ui.define([
 					onSaveDialog: function () {
 						
 						//TODO real addition
-						var data = oView.getModel().getData().recipient;
-
 						MessageToast.show('"' + data.FirstName + ' ' + data.LastName + '" was added');
+
 						oView.byId("addUserDialog").close();
 					}
 				};

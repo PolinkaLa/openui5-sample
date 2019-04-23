@@ -13,8 +13,7 @@ sap.ui.define([
 
 		init: function () {
 			UIComponent.prototype.init.apply(this, arguments);
-			var oData = {
-			};
+			var oData = {};
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
 
