@@ -26,9 +26,14 @@ sap.ui.define([
 						oView.byId("addUserDialog").close();
 					},
 					onSaveDialog: function () {
-						
-						//TODO real addition
-						MessageToast.show('"' + data.FirstName + ' ' + data.LastName + '" was added');
+
+						var data = oView.getModel().getData();
+						// data.Users.push(data.insertData);
+						data.Users.unshift(data.insertData);
+						var model = new JSONModel(data);
+						oView.setModel(model);
+
+						MessageToast.show('"' + data.insertData.FirstName + ' ' + data.insertData.LastName + '" was added');
 
 						oView.byId("addUserDialog").close();
 					}

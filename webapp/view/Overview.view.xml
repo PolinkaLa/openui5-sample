@@ -18,7 +18,7 @@
 				growingScrollToLoad="true"
 				width="auto"
 				items="{
-					path : 'users>/Users'
+					path : '/Users'
 				}">
 				<headerToolbar>
 					<Toolbar>
@@ -45,21 +45,25 @@
 					<Column id="NameOfRoomCol">
 						<Text text="{i18n>Room}" />
 					</Column>
+					<Column id="DateBirthCol">
+						<Text text="{i18n>DateBirth}" />
+					</Column>
 					
 				</columns>
 				<items>
 					<ColumnListItem type="Navigation" press="onShowDetail">
 						<cells>
 							<ObjectIdentifier
-								title="{users>UserID}"
-								text="{users>LastName}"/>
-							<Text text="{users>FirstName}"/>	
-							<Text
-								text="{users>Project}" />
-								<Text text="{
-								path: 'users>Room',
-								formatter: '.formatter.roomName'
-							}"/>
+								title="{UserID}"
+								text="{LastName}"/>
+							<Text text="{FirstName}"/>	
+							<Text text="{Project}"/>
+							<Text text="{
+								path: 'Room',
+								formatter: '.formatter.roomName'}"/>
+							<Text text="{
+								path : 'DateBirth', 
+								formatter: '.formatter.dateFormatter'}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
@@ -68,13 +72,14 @@
 		<footer>
 			<Toolbar>
 				<content>
-					<Text text='"All rights reserved" 2019'/>
+					<Text text='"All rights reserved" 2019' class="sapUiSmallMargin"/>
 					<ToolbarSpacer/>
 					<Button
 						text="Add new User"
 						icon="sap-icon://add-contact"
 						press=".onOpenAddUserDialog"
-						type="Accept"/>
+						type="Accept"
+						class="sapUiSmallMargin"/>
 				</content>
 			</Toolbar>
 		</footer>

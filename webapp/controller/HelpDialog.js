@@ -18,22 +18,21 @@ sap.ui.define([
 		open : function () {
 			var oView = this._oView;
 
-			// create dialog lazily
 			if (!oView.byId("helpDialog")) {
 				var oFragmentController = {
 					onCloseDialog : function () {
 						oView.byId("helpDialog").close();
 					}
 				};
-				// load asynchronous XML fragment
+
 				Fragment.load({
 					id: oView.getId(),
 					name: "sap.ui.demo.staff.view.HelpDialog",
 					controller: oFragmentController
 				}).then(function (oDialog) {
-					// connect dialog to the root view of this component (models, lifecycle)
+
 					oView.addDependent(oDialog);
-					// forward compact/cozy style into dialog
+
 					syncStyleClass(oView.getController().getOwnerComponent().getContentDensityClass(), oView, oDialog);
 					oDialog.open();
 				});

@@ -13,6 +13,10 @@ sap.ui.define([], function () {
 				default:
 					return roomNumber;
 			}
+		},
+		dateFormatter : function (ts){ 
+		var d = new Date(ts*1000);
+    	return ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear();
 		}
 	};
 });

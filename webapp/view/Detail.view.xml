@@ -9,17 +9,17 @@
 		navButtonPress=".onNavBack">
 		<ObjectHeader
 			icon="sap-icon://customer"
-			title="{users>FirstName} {users>LastName}"
-			intro="{users>Position}" >
+			title="{Info>FirstName} {Info>LastName}"
+			intro="{Info>Position}" >
 			<attributes>
-				<ObjectAttribute title="{i18n>UserID}" text="{users>UserID}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>Login}" text="{users>Login}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>CreatedDate}" text="{users>CreatedDate}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>DateBirth}" text="{users>DateBirth}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>Project}" text="{users>Project}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>Manager}" text="{users>Manager}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>Room}" text="{users>Room}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>Computer}" text="{users>Computer}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>UserID}" text="{Info>UserID}" />
+				<ObjectAttribute title="{i18n>Login}" text="{Info>Login}" />
+				<ObjectAttribute title="{i18n>CreatedDate}" text="{Info>CreatedDate}" />
+				<ObjectAttribute title="{i18n>DateBirth}" text="{Info>DateBirth}" />
+				<ObjectAttribute title="{i18n>Project}" text="{Info>Project}" />
+				<ObjectAttribute title="{i18n>Manager}" text="{Info>Manager}" />
+				<ObjectAttribute title="{i18n>Room}" text="{Info>Room}" />
+				<ObjectAttribute title="{i18n>Computer}" text="{Info>Computer}" />
 			</attributes>
 		</ObjectHeader>
 		<footer>

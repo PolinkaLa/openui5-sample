@@ -15,25 +15,12 @@ sap.ui.define([
 	return Controller.extend("sap.ui.demo.staff.controller.Overview", {
 		onInit: function () {
 			
-			var oData = {
-				recipient : {
-					UserID: '',
-					FirstName: '',
-					LastName: '',
-					DateBirth: '',
-					Login: '',
-					CreatedDate: '',
-					Project: '',
-					Manager: '',
-					Room: '',
-					Position: '',
-					Computer: ''
-				}
-			 };
-			var oModel = new JSONModel(oData);
+			var oModel = new JSONModel();
+			oModel.loadData("../Users.json");
+	
 	
 			this.getView().setModel(oModel);
-			console.log(this.getView().getModel());
+			console.log();
 
 			this._helpDialog = new HelpDialog(this.getView());
 			this._addUserDialog = new AddUserDialog(this.getView());
@@ -59,8 +46,9 @@ sap.ui.define([
 			var oItem = oEvent.getSource();
 			var oRouter = UIComponent.getRouterFor(this);
 			oRouter.navTo("detail", {
-				userPath: oItem.getBindingContext("users").getPath().substr(7)
+				userPath: oItem.getBindingContext().getPath().substr(7)
 			});
+			console.log(oItem.getBindingContext().getPath().substr(7))
 		},
 
 		onSearchUser : function (oEvent) {

@@ -9,27 +9,33 @@ sap.ui.define(['jquery.sap.global'],
 			aColumns : [
 				{
 					id: "staff-usersListTable-ProjectCol",
-					order: 0,
+					order: 3,
 					text: "Project",
 					visible: false
 				},
 				{
 					id: "staff-usersListTable-LastNameCol",
-					order: 3,
+					order: 1,
 					text: "Last Name",
 					visible: true
 				},
 				{
 					id: "staff-usersListTable-FirstNameCol",
-					order: 1,
+					order: 0,
 					text: "First Name",
 					visible: true
 				},
 				{
 					id: "staff-usersListTable-NameOfRoomCol",
-					order: 3,
+					order: 2,
 					text: "Room",
 					visible: true
+				},
+				{
+					id: "staff-usersListTable-DateBirthCol",
+					order: 4,
+					text: "DateBirth",
+					visible: false
 				}
 			]
 		},
@@ -79,6 +85,12 @@ sap.ui.define(['jquery.sap.global'],
 					id: "staff-usersListTable-NameOfRoomCol",
 					order: 2,
 					text: "Room",
+					visible: false
+				},
+				{
+					id: "staff-usersListTable-DateBirthCol",
+					order: 4,
+					text: "DateBirth",
 					visible: true
 				}
 							]

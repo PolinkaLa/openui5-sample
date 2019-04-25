@@ -16,8 +16,9 @@ sap.ui.define([
 
 			this.getView().bindElement({
 				path: "/Users/" + oEvent.getParameter("arguments").userPath,
-				model: "users"
+				model: 'Info'
 			});
+
 		},
 
 		onNavBack: function () {

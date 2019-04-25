@@ -42,7 +42,7 @@
             "bundleName": "sap.ui.demo.staff.i18n.i18n"
           }
         },
-        "users": {
+        "Info": {
           "type": "sap.ui.model.json.JSONModel",
           "uri": "Users.json"
         }

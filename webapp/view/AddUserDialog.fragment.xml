@@ -3,12 +3,39 @@
    xmlns:core="sap.ui.core" >
    <Dialog id="addUserDialog" title="Add User">
       <content>
+      	<VBox width="auto" class="sapUiLargeMargin" id="form">
             <Label text="{i18n>FirstName}" labelFor="firstNameInput"/>
-            <Input id="firstNameInput"   value="{/recipient/FirstName}"/>
+            <Input 
+               id="firstNameInput"
+               placeholder="Enter Fist Name..." 
+               value="{/insertData/FirstName}" />
             <Label text="{i18n>LastName}" labelFor="lastNameInput"/>
-            <Input id="lastNameInput"   value="{/recipient/LastName}"/>
+            <Input 
+               id="lastNameInput"
+               placeholder="Enter Last Name..." 
+               value="{/insertData/LastName}" />
+            <Label text="{i18n>DateBirth}" labelFor="dateBirthInpit"/>
+		      <DatePicker
+			      id="dateBirthInpit"
+			      placeholder="Enter Date of Bith..."
+			      change="handleChange"
+			      class="sapUiSmallMarginBottom" 
+               value="{/insertData/DateBirth}" />
+            <Label text="{i18n>Room}" labelFor="roomInput" width="auto"/>
+            <ComboBox
+               id="roomInput"
+               placeholder="Select room..."
+               value="{/insertData/Room}"
+				   items="{
+					   path: '/Rooms',
+					   sorter: { path: 'id' }}">
+				<core:Item key="{id}" text="{name}" />
+			</ComboBox>
+         <Text text="{/insertData/FirstName} {/insertData/LastName} {/insertData/DateBirth} {/insertData/Room}"/>
+         </VBox>
       </content>
+      
       <beginButton><Button text="{i18n>addUserDialogSaveBtnText}" press=".onSaveDialog"/></beginButton>
-      <endButton><Button text="{i18n>addUserDialogCloseBtnText}" press=".onCloseDialog"/> </endButton>
+      <endButton><Button text="{i18n>addUserDialogCloseBtnText}" press=".onCloseDialog"/></endButton>
    </Dialog>
 </core:FragmentDefinition>
